@@ -217,6 +217,9 @@ async function setActivity(rpc: Client) {
         };
 
         if (infos.url) {
+          if (infos.url.includes('music.apple.com/us')) {
+            infos.url = infos.url.replace('music.apple.com/us', `music.apple.com/jp`);
+          }
           activity.buttons = [
             {
               label: "Play on Apple Music",
